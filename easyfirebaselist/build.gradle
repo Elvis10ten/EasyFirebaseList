@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    // Support dependencies
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibVersion"
+
+    // Firebase dependencies
+    implementation "com.google.firebase:firebase-core:${rootProject.playLibVersion}"
+    implementation "com.google.firebase:firebase-database:${rootProject.playLibVersion}"
+    implementation "com.firebaseui:firebase-ui-database:${rootProject.firebaseUiVersion}"
+
+    // Other dependencies
+    implementation 'com.android.support:support-v4:26.1.0'
+    compile "com.wang.avi:library:$rootProject.aviLibraryVersion"
+
+    // Local unit tests dependencies
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    testImplementation "com.nhaarman:mockito-kotlin:$rootProject.kotlinMockitoVersion"
+
+    // Espresso UI Testing dependencies
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+
+}
