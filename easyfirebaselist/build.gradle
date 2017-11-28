@@ -43,7 +43,7 @@ dependencies {
 
     // Other dependencies
     implementation 'com.android.support:support-v4:26.1.0'
-    compile "com.wang.avi:library:$rootProject.aviLibraryVersion"
+    implementation "com.wang.avi:library:$rootProject.aviLibraryVersion"
 
     // Local unit tests dependencies
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
@@ -54,3 +54,30 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
 
 }
+
+ext {
+    bintrayRepo = 'WebViewOverlay'
+    bintrayName = 'WebViewOverlay'
+
+    publishedGroupId = 'org.ptyagicodecamp'
+    libraryName = 'EasyFirebaseList'
+    artifact = 'EasyFirebaseList'
+
+    libraryDescription = 'A simple library containing fragments to help displaying a list of items from the Firebase database'
+
+    siteUrl = 'https://github.com/Elvis10ten/EasyFirebaseList'
+    gitUrl = 'https://github.com/Elvis10ten/EasyFirebaseList.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'elvis10ten'
+    developerName = 'Elvis Chidera'
+    developerEmail = 'elvis.chidera@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
